@@ -34,6 +34,9 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
         exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(471, 220));
+        setMinimumSize(new java.awt.Dimension(471, 220));
+        setPreferredSize(new java.awt.Dimension(471, 220));
 
         openingPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Dinosaur Run"));
 

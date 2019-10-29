@@ -1,17 +1,21 @@
 # DinosaurGame
-/*
-A game for grade 12 ICS
+This repository contains the code for the dinosaur game we are working on as a grade 12 ICS assignment.
 
-CONCEPT:
+# Planning
+
+## NOTE:
+- We will be using the issues tab as well as the project tab for scheduling and organizing tasks/problems we encounter.
+
+## CONCEPT:
 - Re-making dinosaur game from Google Chrome when the internet is down
 - A guy/dinosaur/character is trying to avoid blocks at various heights in the air at random intervals.
 - Score increases as time survives
 
-OBJECTIVES:
+## OBJECTIVES:
 - Avoid the blocks
 - Get as high of a score as possible
 
-RULES/GAME MECHANICS:
+## RULES/GAME MECHANICS:
 - There are 3 levels of difficulty, each one increases the speed of the game;
 	- Easy
 	- Medium
@@ -23,5 +27,3 @@ RULES/GAME MECHANICS:
 - The obstacles are scrolling from right to left towards to character as he remains on the same x-position
 - Character jumps by hitting 'W', crouches using 'S'
 	- Keys can be held to keep doing/redo the action
-
-*/

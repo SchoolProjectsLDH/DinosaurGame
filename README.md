@@ -1,7 +1,7 @@
 # DinosaurGame
 This repository contains the code for the dinosaur game we are working on as a grade 12 ICS assignment.
 
-# Planning
+# Planning 
 
 ## NOTE:
 - We will be using the issues tab as well as the project tab for scheduling and organizing tasks/problems we encounter.

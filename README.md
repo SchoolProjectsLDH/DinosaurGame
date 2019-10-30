@@ -27,3 +27,6 @@ This repository contains the code for the dinosaur game we are working on as a g
 - The obstacles are scrolling from right to left towards to character as he remains on the same x-position
 - Character jumps by hitting 'W', crouches using 'S'
 	- Keys can be held to keep doing/redo the action
+
+## FLOWCHART
+[![DinoGame Flowchart](https://i.gyazo.com/6d25080aa252f5ffc234b79b17d38b56.png)](https://gyazo.com/6d25080aa252f5ffc234b79b17d38b56)

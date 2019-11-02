@@ -30,3 +30,15 @@ This repository contains the code for the dinosaur game we are working on as a g
 
 ## FLOWCHART
 [![DinoGame Flowchart](https://i.gyazo.com/6d25080aa252f5ffc234b79b17d38b56.png)](https://gyazo.com/6d25080aa252f5ffc234b79b17d38b56)
+
+## UML DIAGRAMS
+All UML diagrams for crucial classes below. They are subject to change as we refine our plan.
+
+### GameScreen
+[![UML GameScreen](https://i.gyazo.com/7ba93bba6232c81faf4eda0e15124f19.png)](https://gyazo.com/7ba93bba6232c81faf4eda0e15124f19)
+
+### Player
+[![UML Player](https://i.gyazo.com/480c14fb49c6a276d11cfa9a162042c6.png)](https://gyazo.com/480c14fb49c6a276d11cfa9a162042c6)
+
+### Enemy
+[![UML Enemy](https://i.gyazo.com/d742b511dfab07f962bd46d28514e9b7.png)](https://gyazo.com/d742b511dfab07f962bd46d28514e9b7)

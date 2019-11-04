@@ -14,7 +14,7 @@ import java.awt.image.BufferedImage;
  *
  * @author keshavgupta
  */
-public class BaddieBird extends Enemy{
+public class BigBird extends Enemy{
     public final int basePos = 100;
 	
     private int positionX;
@@ -26,7 +26,7 @@ public class BaddieBird extends Enemy{
 	
     private Rectangle rectBound;
     
-    public BaddieBird(Player mainCharacter, int posX, int width, int height, BufferedImage image) {
+    public BigBird(Player mainCharacter, int posX, int width, int height, BufferedImage image) {
         this.positionX = posX;
         this.baddieWidth = width;
         this.baddieHeight = height;

@@ -20,7 +20,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 	private final int gameOver = 2;
 	
 	private final Ground land;
-	private final Player mainCharacter;
+	private final Player mainCharacter;//scorestuff
 	private final BackgroundC clouds;
 	private Thread thread;
 

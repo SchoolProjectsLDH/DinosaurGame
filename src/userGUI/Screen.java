@@ -8,9 +8,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
-import gameComponents.BackgroundC;
-import gameComponents.Ground;
-import gameComponents.Player;
+import gameComponents.*;
 import zimgHandlers.ImgCompiler;
 
 public class Screen extends JPanel implements Runnable, KeyListener {
@@ -21,6 +19,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 	
 	private final Ground land;
 	private final Player mainCharacter;//scorestuff
+        private final EnemyHandler enemiesHandler;
 	private final BackgroundC clouds;
 	private Thread thread;
 
@@ -39,6 +38,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 		mainCharacter.setSpeedX(difficulty);
 		replayButtonImage = ImgCompiler.getResouceImage("data/replay_button.png");
 		gameOverButtonImage = ImgCompiler.getResouceImage("data/gameover_text.png");
+                enemiesHandler = new EnemyHandler(mainCharacter);
 		clouds = new BackgroundC(GameCreator.SCREEN_WIDTH, mainCharacter);
 	}
 
@@ -52,6 +52,12 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 			clouds.moveCloud();
 			land.updateLandScroll();
 			mainCharacter.updatePlayerState();
+                        enemiesHandler.updateEnemyLocations();
+			if (enemiesHandler.isCollided()) {
+				mainCharacter.playDeadOof();
+				gameState = gameOver;
+				mainCharacter.playerDeadState(true);
+			}
 		}
 	}
 
@@ -67,6 +73,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 		case gamePlaying:
                     	clouds.drawNewCloudLoc(g);
 			land.draw(g);
+                        enemiesHandler.draw(g);
 			mainCharacter.drawPlayerComponents(g);
 			g.setColor(Color.BLACK);
 			g.drawString("Score: " + mainCharacter.score, 500, 20);
@@ -158,6 +165,7 @@ public class Screen extends JPanel implements Runnable, KeyListener {
 	private void resetGame() {
 		mainCharacter.playerDeadState(false);
 		mainCharacter.returnToLand();
+                enemiesHandler.refreshEnemy();
                 fps = 100;
                 mainCharacter.score = 0;
 

@@ -56,7 +56,7 @@ public class EnemyHandler {
             case 3:
                 return new Baddie(mainCharacter, 800, bird.getWidth() - 10, bird.getHeight() - 10, bird);
             default:
-                return new BaddieBird(mainCharacter, 800, bird.getWidth() - 10, bird.getHeight() - 10, bird);
+                return new BigBird(mainCharacter, 800, bird.getWidth() - 10, bird.getHeight() - 10, bird);
         }
     }
 

@@ -27,12 +27,12 @@ public class BaddieBird extends Enemy{
     private Rectangle rectBound;
     
     public BaddieBird(Player mainCharacter, int posX, int width, int height, BufferedImage image) {
-		this.positionX = posX;
-		this.baddieWidth = width;
-		this.baddieHeight = height;
-		this.image = image;
-		this.mainCharacter = mainCharacter;
-		rectBound = new Rectangle();
+        this.positionX = posX;
+        this.baddieWidth = width;
+        this.baddieHeight = height;
+        this.image = image;
+        this.mainCharacter = mainCharacter;
+        rectBound = new Rectangle();
     }
     @Override
     public void updateBaddieLoc() {

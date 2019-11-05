@@ -35,6 +35,7 @@ public class HighScores extends javax.swing.JFrame {
         menuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("High Scores"));
 

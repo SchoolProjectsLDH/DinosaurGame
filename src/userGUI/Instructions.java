@@ -59,17 +59,17 @@ public class Instructions extends javax.swing.JFrame {
         instructionText.setText("You play a dinosaur who is trying to run as fast and far as possible. Avoid the obstacles by ducking or jumping over them! Use the arrow keys (up/down) to duck under birds and jump over cacti. The farther you go, the higher your score!");
         jScrollPane1.setViewportView(instructionText);
 
-        Dino2.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character1.png")); // NOI18N
+        Dino2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main-character1.png"))); // NOI18N
 
-        Dino.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character1.png")); // NOI18N
+        Dino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main-character3.png"))); // NOI18N
 
-        DinoJump.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character1.png")); // NOI18N
+        DinoJump.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main-character2.png"))); // NOI18N
 
-        Cacti.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\cactus2.png")); // NOI18N
+        Cacti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cactus1.png"))); // NOI18N
 
-        DinoDuck.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character5.png")); // NOI18N
+        DinoDuck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main-character6.png"))); // NOI18N
 
-        Bird.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\bird.png")); // NOI18N
+        Bird.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bird.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,7 +104,7 @@ public class Instructions extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Dino2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()

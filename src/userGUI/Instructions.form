@@ -117,7 +117,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Dino2" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
@@ -155,42 +155,42 @@
         <Component class="javax.swing.JLabel" name="Dino2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\NetBeansProjects\DinosaurGame\DinosaurGame\data\main-character1.png"/>
+              <Image iconType="3" name="/Images/main-character1.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Dino">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\NetBeansProjects\DinosaurGame\DinosaurGame\data\main-character1.png"/>
+              <Image iconType="3" name="/Images/main-character3.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="DinoJump">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\NetBeansProjects\DinosaurGame\DinosaurGame\data\main-character1.png"/>
+              <Image iconType="3" name="/Images/main-character2.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Cacti">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\NetBeansProjects\DinosaurGame\DinosaurGame\data\cactus2.png"/>
+              <Image iconType="3" name="/Images/cactus1.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="DinoDuck">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\NetBeansProjects\DinosaurGame\DinosaurGame\data\main-character5.png"/>
+              <Image iconType="3" name="/Images/main-character6.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Bird">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="P:\NetBeansProjects\DinosaurGame\DinosaurGame\data\bird.png"/>
+              <Image iconType="3" name="/Images/bird.png"/>
             </Property>
           </Properties>
         </Component>

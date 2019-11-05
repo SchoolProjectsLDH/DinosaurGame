@@ -28,51 +28,99 @@ public class Instructions extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         instructionText = new javax.swing.JTextPane();
-        tempLabel = new javax.swing.JLabel();
-        tempLabel2 = new javax.swing.JLabel();
+        Dino2 = new javax.swing.JLabel();
+        Dino = new javax.swing.JLabel();
+        DinoJump = new javax.swing.JLabel();
+        Cacti = new javax.swing.JLabel();
+        DinoDuck = new javax.swing.JLabel();
+        Bird = new javax.swing.JLabel();
         menuButton = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
+
+        jLabel1.setText("jLabel1");
+
+        jLabel4.setText("jLabel4");
+
+        jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Instructions"));
 
         instructionText.setEditable(false);
-        instructionText.setText("[Instructions]");
+        instructionText.setText("You play a dinosaur who is trying to run as fast and far as possible. Avoid the obstacles by ducking or jumping over them! Use the arrow keys (up/down) to duck under birds and jump over cacti. The farther you go, the higher your score!");
         jScrollPane1.setViewportView(instructionText);
 
-        tempLabel.setText("[Dino jump image]");
+        Dino2.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character1.png")); // NOI18N
 
-        tempLabel2.setText("[Dino crouch image]");
+        Dino.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character1.png")); // NOI18N
+
+        DinoJump.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character1.png")); // NOI18N
+
+        Cacti.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\cactus2.png")); // NOI18N
+
+        DinoDuck.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\main-character5.png")); // NOI18N
+
+        Bird.setIcon(new javax.swing.ImageIcon("P:\\NetBeansProjects\\DinosaurGame\\DinosaurGame\\data\\bird.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Dino2)
+                                .addGap(18, 18, 18)
+                                .addComponent(Cacti))
+                            .addComponent(DinoJump))
+                        .addGap(71, 71, 71)
+                        .addComponent(Dino)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(DinoDuck))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(Bird)))))
                 .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(tempLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tempLabel2)
-                .addGap(58, 58, 58))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tempLabel)
-                    .addComponent(tempLabel2))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(DinoJump)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Dino2))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Dino, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(Bird)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(DinoDuck)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Cacti))))
         );
 
         menuButton.setText("Main Menu");
@@ -96,9 +144,9 @@ public class Instructions extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuButton)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,12 +197,19 @@ public class Instructions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Bird;
+    private javax.swing.JLabel Cacti;
+    private javax.swing.JLabel Dino;
+    private javax.swing.JLabel Dino2;
+    private javax.swing.JLabel DinoDuck;
+    private javax.swing.JLabel DinoJump;
     private javax.swing.JTextPane instructionText;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton menuButton;
-    private javax.swing.JLabel tempLabel;
-    private javax.swing.JLabel tempLabel2;
     // End of variables declaration//GEN-END:variables
 }

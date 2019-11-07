@@ -17,23 +17,36 @@ public class Lose extends javax.swing.JFrame {
     public Lose() {
         initComponents();
     }
-    
+
     public int score;
-    
+
     public Lose(int score, String User) {
-        this.score = score;      
+        this.score = score;
         initComponents();
         updateScreen(this.score, User);
     }
-    
+
     private void updateScreen(int num, String User){
         finalScoreOutput.setText(Integer.toString(num));
         ParseJson scores = new ParseJson("src/userGUI/UserHighscores.json", User, num);
-        
+
         if (scores.isHighScore){
-            
-            ifHighScoreText.setText("Yes, you got "+ scores.ranking+ " place!");
-            
+            String suffix;
+            switch(scores.ranking){
+                case 1:
+                    prefix = "st";
+                    break;
+                case 2:
+                    prefix = "nd";
+                    break;
+                case 3:
+                    prefix = "rd";
+                    break;
+                default:
+                    prefix = "th";
+                    break;
+            }
+            ifHighScoreText.setText("Yes, you got "+ scores.ranking + suffix + " place!");  
         }
     }
 
@@ -70,7 +83,7 @@ public class Lose extends javax.swing.JFrame {
         ifHighScoreLabel.setText("Did you make the high score?");
 
         ifHighScoreText.setEditable(false);
-        ifHighScoreText.setText("[yes/no answer, what place if yes]");
+        ifHighScoreText.setText("Sadly no :(");
 
         highScoreButton.setText("High Scores");
         highScoreButton.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +200,7 @@ public class Lose extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

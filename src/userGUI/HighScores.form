@@ -90,7 +90,7 @@
             <Component class="javax.swing.JTextPane" name="scoreIntroText">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="Here are all the hig scores of the best past players. Do your best and you may end up here too!"/>
+                <Property name="text" type="java.lang.String" value="Here are all the high scores of the best past players. Do your best and you may end up here too!"/>
               </Properties>
             </Component>
           </SubComponents>

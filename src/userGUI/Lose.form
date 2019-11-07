@@ -125,7 +125,7 @@
         <Component class="javax.swing.JTextField" name="ifHighScoreText">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
-            <Property name="text" type="java.lang.String" value="[yes/no answer, what place if yes]"/>
+            <Property name="text" type="java.lang.String" value="Sadly no :("/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="highScoreButton">

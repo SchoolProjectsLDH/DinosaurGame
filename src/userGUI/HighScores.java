@@ -57,7 +57,7 @@ public class HighScores extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("High Scores"));
 
         scoreIntroText.setEditable(false);
-        scoreIntroText.setText("Here are all the hig scores of the best past players. Do your best and you may end up here too!");
+        scoreIntroText.setText("Here are all the high scores of the best past players. Do your best and you may end up here too!");
         jScrollPane1.setViewportView(scoreIntroText);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

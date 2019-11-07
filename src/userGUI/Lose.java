@@ -28,7 +28,7 @@ public class Lose extends javax.swing.JFrame {
     
     private void updateScreen(int num, String User){
         finalScoreOutput.setText(Integer.toString(num));
-        ParseJson scores = new ParseJson("src/userGUI/Test.json", User, num);
+        ParseJson scores = new ParseJson("src/userGUI/UserHighscores.json", User, num);
         
         if (scores.isHighScore){
             

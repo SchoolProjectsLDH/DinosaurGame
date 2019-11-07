@@ -16,7 +16,7 @@ public class HighScores extends javax.swing.JFrame {
      */
     public HighScores() {
         initComponents();
-        updateTable("src/userGUI/Test.json");
+        updateTable("src/userGUI/UserHighscores.json");
     }
     
     private void updateTable(String path) {

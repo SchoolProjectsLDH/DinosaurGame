@@ -42,3 +42,17 @@ All UML diagrams for crucial classes below. They are subject to change as we ref
 
 ### Enemy
 [![UML Enemy](https://i.gyazo.com/d742b511dfab07f962bd46d28514e9b7.png)](https://gyazo.com/d742b511dfab07f962bd46d28514e9b7)
+
+## GUI Plans
+Contains images showing roughly what the GUI will look like
+### Main menu
+[![Main Menu](https://i.gyazo.com/506ae6dad90477c6d328ee1c49663dcd.png)](https://gyazo.com/506ae6dad90477c6d328ee1c49663dcd)
+
+### Instructions page
+[![Instructions](https://i.gyazo.com/23f45f9d9ae59d647efe2ad24249099a.png)](https://gyazo.com/23f45f9d9ae59d647efe2ad24249099a)
+
+### Highscores page
+[![Highscores](https://i.gyazo.com/f1b6f44041c2ed34d9b3407f0d181dfb.png)](https://gyazo.com/f1b6f44041c2ed34d9b3407f0d181dfb)
+
+### Loss page
+[![Loss page](https://i.gyazo.com/4461fc34e01fa4d47f855f62b3985a20.png)](https://gyazo.com/4461fc34e01fa4d47f855f62b3985a20)

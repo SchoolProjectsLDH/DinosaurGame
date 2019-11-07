@@ -17,6 +17,25 @@ public class Lose extends javax.swing.JFrame {
     public Lose() {
         initComponents();
     }
+    
+    public int score;
+    
+    public Lose(int score, String User) {
+        this.score = score;      
+        initComponents();
+        updateScreen(this.score, User);
+    }
+    
+    private void updateScreen(int num, String User){
+        finalScoreOutput.setText(Integer.toString(num));
+        ParseJson scores = new ParseJson("src/userGUI/Test.json", User, num);
+        
+        if (scores.isHighScore){
+            
+            ifHighScoreText.setText("Yes, you got "+ scores.ranking+ " place!");
+            
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -172,7 +191,7 @@ public class Lose extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

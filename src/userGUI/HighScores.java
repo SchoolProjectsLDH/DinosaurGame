@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package userGUI;
-
+import org.json.JSONArray;
 /**
  *
  * @author S331471193
@@ -16,6 +16,23 @@ public class HighScores extends javax.swing.JFrame {
      */
     public HighScores() {
         initComponents();
+        updateTable("src/userGUI/Test.json");
+    }
+    
+    private void updateTable(String path) {
+        JSONArray scores = ParseJson.returnArray(path);
+        for (int i = 0; i < 10; i++) {
+            jTable1.setValueAt(scores.getJSONObject(i).getInt("Score"), i, 0);
+            jTable1.setValueAt(scores.getJSONObject(i).get("Name"), i, 1);
+        }
+        
+        /*for (JSONObject i : scores) {
+            int counter = 0;
+            jTable1.setValueAt(i.getInt("Score"), counter, 0);
+            jTable1.setValueAt(i.get("Name"), counter, 1);
+            counter++;
+        }*/
+
     }
 
     /**
@@ -45,29 +62,21 @@ public class HighScores extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1st", null},
-                {"2nd", null},
-                {"3rd", null},
-                {"4th", null},
-                {"5th", null},
-                {"6th", null},
-                {"7th", null},
-                {"8th", null},
-                {"9th", null},
-                {"10th", null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Placement", "Score"
+                "Player", "Score"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane3.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -77,9 +86,9 @@ public class HighScores extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

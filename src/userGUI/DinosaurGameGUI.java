@@ -87,7 +87,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
             }
         });
 
-        Username.setText("Enter Username");
+        Username.setToolTipText("Enter Username");
         Username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameActionPerformed(evt);
@@ -117,16 +117,15 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
                         .addComponent(jokeLine)
                         .addGap(0, 103, Short.MAX_VALUE))
                     .addGroup(openingPanelLayout.createSequentialGroup()
-                        .addGroup(openingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(highScoreButton)
-                            .addComponent(instructionsButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(openingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(openingPanelLayout.createSequentialGroup()
-                                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)))))
+                        .addComponent(highScoreButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, openingPanelLayout.createSequentialGroup()
+                        .addComponent(instructionsButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(Username)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -190,7 +189,12 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void easyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_easyButtonActionPerformed
-        (new GameCreator()).startGame(6, UserName);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new GameCreator()).startGame(6, UserName);
+            }
+        });
+        this.dispose();
     }//GEN-LAST:event_easyButtonActionPerformed
 
     private void highScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highScoreButtonActionPerformed
@@ -203,11 +207,21 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_highScoreButtonActionPerformed
 
     private void medButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medButtonActionPerformed
-        (new GameCreator()).startGame(7, UserName);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new GameCreator()).startGame(7, UserName);
+            }
+        });
+        this.dispose();
     }//GEN-LAST:event_medButtonActionPerformed
 
     private void hardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hardButtonActionPerformed
-       (new GameCreator()).startGame(8, UserName);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new GameCreator()).startGame(8, UserName);
+            }
+        });
+        this.dispose();
     }//GEN-LAST:event_hardButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -224,14 +238,15 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_instructionsButtonActionPerformed
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_UsernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        
-        if (jTextField1.getText().length()>10){
-            UserName = jTextField1.getText().substring(0, 10);
+       
+        if (Username.getText().length()>10){
+            UserName = Username.getText().substring(0, 10);
+        }else{
+            UserName = Username.getText();
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

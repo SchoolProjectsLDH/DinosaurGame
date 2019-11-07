@@ -34,16 +34,16 @@ public class Lose extends javax.swing.JFrame {
             String suffix;
             switch(scores.ranking){
                 case 1:
-                    prefix = "st";
+                    suffix = "st";
                     break;
                 case 2:
-                    prefix = "nd";
+                    suffix = "nd";
                     break;
                 case 3:
-                    prefix = "rd";
+                    suffix = "rd";
                     break;
                 default:
-                    prefix = "th";
+                    suffix = "th";
                     break;
             }
             ifHighScoreText.setText("Yes, you got "+ scores.ranking + suffix + " place!");  

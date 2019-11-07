@@ -56,3 +56,6 @@ Contains images showing roughly what the GUI will look like
 
 ### Loss page
 [![Loss page](https://i.gyazo.com/4461fc34e01fa4d47f855f62b3985a20.png)](https://gyazo.com/4461fc34e01fa4d47f855f62b3985a20)
+
+## Algorithm
+See [Document](https://docs.google.com/document/d/1wBf-HjNaGea9tyG-j_FRho5JtjuYvdS6VkcOEQDVxGs/edit?usp=sharing)

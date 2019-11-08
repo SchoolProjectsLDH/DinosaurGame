@@ -22,8 +22,8 @@ public class HighScores extends javax.swing.JFrame {
     private void updateTable(String path) {
         JSONArray scores = ParseJson.returnArray(path);
         for (int i = 0; i < 10; i++) {
-            jTable1.setValueAt(scores.getJSONObject(i).getInt("Score"), i, 0);
-            jTable1.setValueAt(scores.getJSONObject(i).get("Name"), i, 1);
+            scoresTable.setValueAt(scores.getJSONObject(i).getInt("Score"), i, 0);
+            scoresTable.setValueAt(scores.getJSONObject(i).get("Name"), i, 1);
         }
         
         /*for (JSONObject i : scores) {
@@ -48,7 +48,7 @@ public class HighScores extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         scoreIntroText = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        scoresTable = new javax.swing.JTable();
         menuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +60,7 @@ public class HighScores extends javax.swing.JFrame {
         scoreIntroText.setText("Here are all the high scores of the best past players. Do your best and you may end up here too!");
         jScrollPane1.setViewportView(scoreIntroText);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        scoresTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -77,7 +77,7 @@ public class HighScores extends javax.swing.JFrame {
                 "Player", "Score"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(scoresTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -178,8 +178,8 @@ public class HighScores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton menuButton;
     private javax.swing.JTextPane scoreIntroText;
+    private javax.swing.JTable scoresTable;
     // End of variables declaration//GEN-END:variables
 }

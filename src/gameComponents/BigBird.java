@@ -14,8 +14,8 @@ import java.awt.image.BufferedImage;
  *
  * @author keshavgupta
  */
-public class BigBird extends Enemy{
-    public final int basePos = 100;
+public class BigBird extends Enemy{//SAME AS BADDIE.JAVA BUT WITH DIFFERENT basePos!!!
+    public final int basePos = 100;//Higher base pos
 	
     private int positionX;
     private final int baddieWidth;

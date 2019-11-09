@@ -150,7 +150,7 @@ public class Instructions extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DinosaurGameGUI().setVisible(true);
+                new DinosaurGameGUI().setVisible(true);//go back to menu
             }
         });
         this.dispose();
@@ -186,7 +186,7 @@ public class Instructions extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Instructions().setVisible(true);
+                new Instructions().setVisible(true);//make visible
             }
         });
     }

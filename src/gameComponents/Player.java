@@ -13,154 +13,151 @@ import zimgHandlers.ImgCompiler;
 
 public class Player {
 
-    public static final int landYPos = 80;
-    public static final float gravityFactor = 0.4f;
+    public static final int LAND_Y_POS = 80;
+    public static final float GRAVITY = 0.4f;
 
-    private static final int baseRun = 0;
-    private static final int jump = 1;
-    private static final int crouchRun = 2;
-    private static final int dead = 3;
+    private static final int NORMAL_RUN = 0;//running state
+    private static final int JUMP = 1;//jumping state
+    private static final int CROUCH = 2;
+    private static final int DEAD = 3;
 
     private float positionY;
     private float positionX;
     private float speedX;
     private float speedY;
     private Rectangle hitbox;
+    
+    public int score = 0;//Score attribute
 
-    public int score = 0;
-
-    private int state = baseRun;
+    private int state = NORMAL_RUN;//initial state
 
     private Animator runAnimation;
     private BufferedImage jumpAnimation;
     private Animator crouchAnimation;
     private BufferedImage deathStillPic;
 
-    private AudioClip jSound;
-    private AudioClip dSound;
-    private AudioClip scoreHundredSound;
+    private AudioClip jSound;//Audio file for jumping
+    private AudioClip dSound;//Audio for dying
+    private AudioClip scoreHundredSound;//If audio factor of 100
 
-    public Player() {
-        positionX = 50;
-        positionY = landYPos;
-        hitbox = new Rectangle();
-        runAnimation = new Animator(90);
-        runAnimation.addFrame(ImgCompiler.getResouceImage("data/main-character1.png"));
+    public Player() {//Init all of maincharacter
+        positionX = 50;//always at the same x coord
+        positionY = LAND_Y_POS;//stands on landY
+        hitbox = new Rectangle();//set hitbox obj
+        runAnimation = new Animator(90);//Animates run animation
+        runAnimation.addFrame(ImgCompiler.getResouceImage("data/main-character1.png"));//Add frames of run
         runAnimation.addFrame(ImgCompiler.getResouceImage("data/main-character2.png"));
         jumpAnimation = ImgCompiler.getResouceImage("data/main-character3.png");
         crouchAnimation = new Animator(90);
-        crouchAnimation.addFrame(ImgCompiler.getResouceImage("data/main-character5.png"));
+        crouchAnimation.addFrame(ImgCompiler.getResouceImage("data/main-character5.png"));//Add frames of crouch
         crouchAnimation.addFrame(ImgCompiler.getResouceImage("data/main-character6.png"));
         deathStillPic = ImgCompiler.getResouceImage("data/main-character4.png");
 
         try {
-            jSound =  Applet.newAudioClip(new URL("file","","data/jump.wav"));
+            jSound =  Applet.newAudioClip(new URL("file","","data/jump.wav"));//get wav file
             dSound =  Applet.newAudioClip(new URL("file","","data/dead.wav"));
             scoreHundredSound =  Applet.newAudioClip(new URL("file","","data/scoreup.wav"));
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            e.printStackTrace();//print error if url not found
         }
     }
 
-    public float getSpeedX() {
+    public float getSpeedX() {//speed getter
         return speedX;
     }
 
-    public void setSpeedX(int speedX) {
+    public void setSpeedX(int speedX) {//speed setter
         this.speedX = speedX;
     }
 
-    public void drawPlayerComponents(Graphics g) {
+    public void drawPlayerComponents(Graphics g) {//drawing player based on state
         switch(state) {
-            case baseRun:
+            case NORMAL_RUN://If running
                 g.drawImage(runAnimation.getFrame(), (int) positionX, (int) positionY, null);
                 break;
-            case jump:
+            case JUMP://if jumping
                 g.drawImage(jumpAnimation, (int) positionX, (int) positionY, null);
                 break;
-            case crouchRun:
+            case CROUCH://crouching
                 g.drawImage(crouchAnimation.getFrame(), (int) positionX, (int) (positionY + 20), null);
                 break;
-            case dead:
+            case DEAD://dead
                 g.drawImage(deathStillPic, (int) positionX, (int) positionY, null);
                 break;
         }
-//		Rectangle bound = getBound();
-//		g.setColor(Color.RED);
-//		g.drawRect(bound.x, bound.y, bound.width, bound.height);
     }
 
     public void updatePlayerState() {
-        runAnimation.updateFrame();
-        crouchAnimation.updateFrame();
-        if(positionY >= landYPos) {
-            positionY = landYPos;
-            if(state != crouchRun) {
-                state = baseRun;
+        runAnimation.updateFrame();//Go to next animation frame
+        crouchAnimation.updateFrame();//next crouch frame
+        if(positionY >= LAND_Y_POS) {//if in the sky
+            positionY = LAND_Y_POS;//have it bring you back eventually
+            if(state != CROUCH) {//If you arent crouching when you land
+                state = NORMAL_RUN;//you must be running
             }
         } else {
-            speedY += gravityFactor;
+            speedY += GRAVITY;//set jump arc factor
             positionY += speedY;
         }
     }
 
     public void jumpArcMaker() {
-        if(positionY >= landYPos) {
-            if(jSound != null) {
+        if(positionY >= LAND_Y_POS) {//if you jump
+            if(jSound != null) {//play jump sound
                 jSound.play();
             }
-            speedY = -7.5f;
-            positionY += speedY;
-            state = jump;
+            speedY = -7.5f;//go back down twrd ground
+            positionY += speedY;//move you up
+            state = JUMP;//you are jumping
         }
     }
 
     public void crouchPersist(boolean isDown) {
-        if(state == jump) {
-            return;
+        if(state == JUMP) {//if you are jumping
+            return;//ignore
         }
-        if(isDown) {
-            state = crouchRun;
+        if(isDown) {//if key is down
+            state = CROUCH;//keep crouching
         } else {
-            state = baseRun;
+            state = NORMAL_RUN;//go back to running
         }
     }
 
-    public Rectangle getHitBox() {
+    public Rectangle getHitBox() {//Get hitbox bounds
         hitbox = new Rectangle();
-        if(state == crouchRun) {
+        if(state == CROUCH) {//Get bounds of crouch image
             hitbox.x = (int) positionX + 5;
             hitbox.y = (int) positionY + 20;
             hitbox.width = crouchAnimation.getFrame().getWidth() - 10;
             hitbox.height = crouchAnimation.getFrame().getHeight();
-        } else {
+        } else {//get bounds of run image
             hitbox.x = (int) positionX + 5;
             hitbox.y = (int) positionY;
             hitbox.width = runAnimation.getFrame().getWidth() - 10;
             hitbox.height = runAnimation.getFrame().getHeight();
         }
-        return hitbox;
+        return hitbox;//give back hitbox coords as rectangle obj
     }
 
     public void playerDeadState(boolean isDeath) {
         if(isDeath) {
-            state = dead;
+            state = DEAD;//set dead
         } else {
-            state = baseRun;
+            state = NORMAL_RUN;//if not, keep running
         }
     }
 
-    public void returnToLand() {
-        positionY = landYPos;
+    public void returnToLand() {//reset y pos
+        positionY = LAND_Y_POS;
     }
 
-    public void playDeadOof() {
+    public void playDeadOof() {//play death sound
         dSound.play();
     }
 
-    public void incrementScore() {
+    public void incrementScore() {//add to score
         score += 20;
-        if(score % 100 == 0) {
+        if(score % 100 == 0) {//if its a factor of 100 play the chime sound
             scoreHundredSound.play();
         }
     }

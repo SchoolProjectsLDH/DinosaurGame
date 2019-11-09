@@ -10,7 +10,7 @@ package userGUI;
  * @author S331471193
  */
 public class DinosaurGameGUI extends javax.swing.JFrame {
-    protected String UserName = "unnamed";
+    protected String UserName = "unnamed";//initialize as unnamed
 
     /**
      * Creates new form DinosaurGameGUI
@@ -191,7 +191,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     private void easyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_easyButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                (new GameCreator()).startGame(6, UserName);
+                (new GameCreator()).startGame(6, UserName);//create game with username at 6 speed
             }
         });
         this.dispose();
@@ -200,7 +200,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     private void highScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highScoreButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HighScores().setVisible(true);
+                new HighScores().setVisible(true);//go to highscores window
             }
         });
         this.dispose();
@@ -209,7 +209,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     private void medButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                (new GameCreator()).startGame(7, UserName);
+                (new GameCreator()).startGame(7, UserName);//start game at 7 speed
             }
         });
         this.dispose();
@@ -218,20 +218,20 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     private void hardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hardButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                (new GameCreator()).startGame(8, UserName);
+                (new GameCreator()).startGame(8, UserName);//start game at 8 speed
             }
         });
         this.dispose();
     }//GEN-LAST:event_hardButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        System.exit(0);
+        System.exit(0);//end program
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void instructionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructionsButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Instructions().setVisible(true);
+                new Instructions().setVisible(true);//go to instructions
             }
         });
         this.dispose();
@@ -243,10 +243,10 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-        if (Username.getText().length()>10){
-            UserName = Username.getText().substring(0, 10);
+        if (Username.getText().length()>10){//if usename over letter limit
+            UserName = Username.getText().substring(0, 10);//take only first 10 letters
         }else{
-            UserName = Username.getText();
+            UserName = Username.getText();//otherwise get the whole thing
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -281,7 +281,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DinosaurGameGUI().setVisible(true);
+                new DinosaurGameGUI().setVisible(true);//run game
             }
         });
     }

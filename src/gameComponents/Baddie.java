@@ -7,19 +7,19 @@ import java.awt.image.BufferedImage;
 
 public class Baddie extends Enemy {
 
-    public final int basePos = 125;
+    public final int basePos = 125;//all have the same ground position
 
-    private int positionX;
-    private final int baddieWidth;
-    private final int baddieHeight;
+    private int positionX;//For scrolling
+    private final int baddieWidth;//Width (For hitbox)
+    private final int baddieHeight;//Height
 
-    private final BufferedImage image;
-    private final Player mainCharacter;
+    private final BufferedImage image;//Images of all the bad guys
+    private final Player mainCharacter;//Player obj
 
-    private Rectangle rectBound;
+    private Rectangle rectBound;//Hitbox rectangle
 
     public Baddie(Player mainCharacter, int posX, int width, int height, BufferedImage image) {
-        this.positionX = posX;
+        this.positionX = posX;//Init baddie with attributes
         this.baddieWidth = width;
         this.baddieHeight = height;
         this.image = image;
@@ -28,29 +28,28 @@ public class Baddie extends Enemy {
     }
 
     @Override
-    public void updateBaddieLoc() {
-        positionX -= mainCharacter.getSpeedX();
+    public void updateBaddieLoc() {//Move baddie twrd player
+        positionX -= mainCharacter.getSpeedX();//Move its position depending on the speed
     }
 
     @Override
-    public void drawLocation(Graphics g) {
-        g.drawImage(image, positionX, basePos - image.getHeight(), null);
-        g.setColor(Color.red);
+    public void drawLocation(Graphics g) {//Update image locations
+        g.drawImage(image, positionX, basePos - image.getHeight(), null);//send image to screen 
     }
 
     @Override
-    public Rectangle getHitbox() {
-        rectBound = new Rectangle();
-        rectBound.x = (int) positionX + (image.getWidth() - baddieWidth)/2;
-        rectBound.y = basePos - image.getHeight() + (image.getHeight() - baddieHeight)/2;
+    public Rectangle getHitbox() {//Get the bounds of the enemy on screen
+        rectBound = new Rectangle();//New hitbox reader
+        rectBound.x = (int) positionX + (image.getWidth() - baddieWidth)/2;//Get x bounds
+        rectBound.y = basePos - image.getHeight() + (image.getHeight() - baddieHeight)/2;//Get y bounds
         rectBound.width = baddieWidth;
         rectBound.height = baddieHeight;
-        return rectBound;
+        return rectBound;//return a bound object
     }
 
     @Override
-    public boolean offScreen() {
-        return positionX < -image.getWidth();
+    public boolean offScreen() {//If offscreen
+        return positionX < -image.getWidth();//Baddie has negative position (off window)
     }
 	
 }

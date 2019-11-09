@@ -18,31 +18,31 @@ public class Lose extends javax.swing.JFrame {
         initComponents();
     }
 
-    public int score;
+    public int score;//store score
 
     public Lose(int score, String User) {
-        this.score = score;
+        this.score = score;//get score
         initComponents();
-        updateScreen(this.score, User);
+        updateScreen(this.score, User);//go to update screen
     }
 
     private void updateScreen(int num, String User){
-        finalScoreOutput.setText(Integer.toString(num));
-        ParseJson scores = new ParseJson("src/userGUI/UserHighscores.json", User, num);
+        finalScoreOutput.setText(Integer.toString(num));//your score set number
+        ParseJson scores = new ParseJson("src/userGUI/UserHighscores.json", User, num);//get json scores
 
-        if (scores.isHighScore){
-            String suffix;
+        if (scores.isHighScore){//if its a highscore
+            String suffix;//change suffix
             switch(scores.ranking){
-                case 1:
+                case 1://1st
                     suffix = "st";
                     break;
-                case 2:
+                case 2://2nd
                     suffix = "nd";
                     break;
-                case 3:
+                case 3://3rd
                     suffix = "rd";
                     break;
-                default:
+                default://4th-10th
                     suffix = "th";
                     break;
             }
@@ -174,20 +174,20 @@ public class Lose extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DinosaurGameGUI().setVisible(true);
+                new DinosaurGameGUI().setVisible(true);//back to menu
             }
         });
         this.dispose();
     }//GEN-LAST:event_menuButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        System.exit(0);
+        System.exit(0);//end program
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void highScoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highScoreButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HighScores().setVisible(true);
+                new HighScores().setVisible(true);//to highscores
             }
         });
         this.dispose();
@@ -223,7 +223,7 @@ public class Lose extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Lose().setVisible(true);
+                new Lose().setVisible(true);//set visible
             }
         });
     }

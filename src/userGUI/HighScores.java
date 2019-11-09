@@ -14,25 +14,17 @@ public class HighScores extends javax.swing.JFrame {
     /**
      * Creates new form HighScores
      */
-    public HighScores() {
+    public HighScores() {//Get highscores json file
         initComponents();
-        updateTable("src/userGUI/UserHighscores.json");
+        updateTable("src/userGUI/UserHighscores.json");//highscores path
     }
     
-    private void updateTable(String path) {
-        JSONArray scores = ParseJson.returnArray(path);
-        for (int i = 0; i < 10; i++) {
-            scoresTable.setValueAt(scores.getJSONObject(i).getInt("Score"), i, 0);
-            scoresTable.setValueAt(scores.getJSONObject(i).get("Name"), i, 1);
+    private void updateTable(String path) {//update table using json
+        JSONArray scores = ParseJson.returnArray(path);//get the file as an array
+        for (int i = 0; i < 10; i++) {//for each element in array 
+            scoresTable.setValueAt(scores.getJSONObject(i).getInt("Score"), i, 0);//get scores in score field set to row and collumn
+            scoresTable.setValueAt(scores.getJSONObject(i).get("Name"), i, 1);//get name in name field set to row and collumn
         }
-        
-        /*for (JSONObject i : scores) {
-            int counter = 0;
-            jTable1.setValueAt(i.getInt("Score"), counter, 0);
-            jTable1.setValueAt(i.get("Name"), counter, 1);
-            counter++;
-        }*/
-
     }
 
     /**
@@ -133,7 +125,7 @@ public class HighScores extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DinosaurGameGUI().setVisible(true);
+                new DinosaurGameGUI().setVisible(true);//go back to menu
             }
         });
         this.dispose();
@@ -169,7 +161,7 @@ public class HighScores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HighScores().setVisible(true);
+                new HighScores().setVisible(true);//create window
             }
         });
     }

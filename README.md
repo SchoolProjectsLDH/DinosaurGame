@@ -59,3 +59,6 @@ Contains images showing roughly what the GUI will look like
 
 ## Algorithm
 See [Document](https://docs.google.com/document/d/1wBf-HjNaGea9tyG-j_FRho5JtjuYvdS6VkcOEQDVxGs/edit?usp=sharing)
+
+## Pseudocode
+See [Document](https://docs.google.com/document/d/1LtI6y2jdtDfSV5lt1JmzDZsYh6ew1CtRT1pEDO8lWJg/edit?usp=sharing)

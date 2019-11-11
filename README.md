@@ -4,7 +4,7 @@ This repository contains the code for the dinosaur game we are working on as a g
 # Planning
 
 ## NOTE:
-- We will be using the issues tab as well as the project tab for scheduling and organizing tasks/problems we encounter.
+- We will be using the ISSUES tab as well as the PROJECT tab for scheduling and organizing tasks/problems we encounter. It will tell you how we divided the work and how we worked through some problems.
 
 ## CONCEPT:
 - Re-making dinosaur game from Google Chrome when the internet is down

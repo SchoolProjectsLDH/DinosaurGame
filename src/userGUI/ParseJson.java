@@ -25,7 +25,6 @@ public class ParseJson {
 
     @SuppressWarnings("unchecked")
     public ParseJson(String path, String playerName, int score) { //These are passed from the lose class that occurs once the user dies
-        
         StringBuilder contentBuilder = new StringBuilder(); //Stringbuilder class allows for a mutable string, i.e. one can append characters
 
         try (Stream<String> stream = Files.lines(Paths.get(path), StandardCharsets.UTF_8)) {//stream creates an object for every line in the file

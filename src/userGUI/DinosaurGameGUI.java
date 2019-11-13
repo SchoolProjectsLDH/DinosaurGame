@@ -10,6 +10,7 @@ package userGUI;
  * @author S331471193
  */
 public class DinosaurGameGUI extends javax.swing.JFrame {
+
     protected String UserName = "unnamed";//initialize as unnamed
 
     /**
@@ -40,6 +41,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
         Username = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -166,6 +168,8 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("To start the game, press the up button!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,6 +177,8 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
             .addComponent(openingPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
                 .addComponent(exitButton)
                 .addContainerGap())
         );
@@ -181,7 +187,9 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(openingPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exitButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exitButton)
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -242,13 +250,16 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        if (Username.getText().length()>10){//if usename over letter limit
+
+        if (Username.getText().isEmpty()){//So that the textfield always will contain something
+            UserName = "unnamed";
+        }
+        else if (Username.getText().length() > 10) {//if usename over letter limit
             UserName = Username.getText().substring(0, 10);//take only first 10 letters
-        }else{
+        }else {
             UserName = Username.getText();//otherwise get the whole thing
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -295,6 +306,7 @@ public class DinosaurGameGUI extends javax.swing.JFrame {
     private javax.swing.JButton instructionsButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel jokeLine;
     private javax.swing.JButton medButton;

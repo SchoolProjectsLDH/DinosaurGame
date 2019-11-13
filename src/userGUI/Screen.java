@@ -4,8 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.Window;
 
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
 
 import gameComponents.*;
 
@@ -75,6 +78,8 @@ public class Screen extends JPanel implements Runnable, KeyListener {
                 g.drawString("Score: " + mainCharacter.score, 500, 20);//place score label
                 break;
             case gameOver://game end
+                Window win = SwingUtilities.getWindowAncestor(this);//So that we can access and dispose of the jFrame window from the jPanel class
+                win.dispose();
                 java.awt.EventQueue.invokeLater(new Runnable() {
                     public void run() {
                         new Lose(mainCharacter.score, UserName).setVisible(true);//open lose window
